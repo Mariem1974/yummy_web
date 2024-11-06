@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy</title>
+    <link rel="icon" href="./assets/icons/logo.png" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- font-awesome  -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- style css  -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="position-relative">
+    <!-- preloader  -->
+    <div
+      class="pre-loading bg-black vh-100 position-fixed start-0 top-0 end-0 bottom-0 justify-content-center align-items-center"
+    >
+      <i class="fa-solid fa-spinner fa-spin fa-5x text-white"></i>
+    </div>
+
+    <!-- side nav  -->
+    <div class="side-nav position-fixed top-0 bottom-0 d-flex">
+      <div
+        class="left bg-black text-white p-4 d-flex flex-column justify-content-between"
+      >
+        <ul class="list-unstyled overflow-hidden">
+          <li class="py-2 position-relative" id="nav-search">Search</li>
+          <li class="py-2 position-relative" id="nav-categories">Categories</li>
+          <li class="py-2 position-relative" id="mav-area">Area</li>
+          <li class="py-2 position-relative" id="nav-Ingredients">
+            Ingredients
+          </li>
+          <li class="py-2 position-relative" id="nav-contact-us">Contact Us</li>
+        </ul>
+
+        <div class="nav-footer">
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <div class="copyright">
+            <p>
+              <span class="text-nowrap">Copyright Â© 2019 All Rights</span>
+              <span>Reserved.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="right p-4 d-flex flex-column justify-content-between align-items-center bg-white"
+      >
+        <img src="./assets/icons/logo.png" alt="logo" />
+        <i
+          class="fa-solid open-close-icon fa-2x fa-align-justify"
+          id="open-close"
+        ></i>
+        <div>
+          <i class="fa-solid fa-globe d-block"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- search by name and first char  -->
+    <div class="search-page px-lg-5">
+      <div class="container mt-4 px-lg-5">
+        <div class="row px-lg-5">
+          <div class="col-md-6 mb-4">
+            <input
+              id="search-name"
+              type="search"
+              class="form-control border-1 bg-transparent text-white"
+              placeholder="Search By Name"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              id="search-letter"
+              type="search"
+              class="form-control border-1 bg-transparent text-white"
+              placeholder="Search By First Letter"
+              maxlength="1"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- header container  -->
+    <header class="d-flex justify-content-center py-2 py-md-4">
+      <div class="container mx-md-3 py-4">
+        <div class="row g-4" id="data-container"></div>
+      </div>
+    </header>
+
+    <!-- form section  -->
+    <div class="form position-absolute top-0 end-0 start-0">
+      <div
+        class="container d-flex justify-content-center align-items-center min-vh-100 px-xl-5"
+      >
+        <div class="row px-xl-5">
+          <div class="col-12">
+            <div class="container px-xl-5">
+              <div class="row mt-5 justify-content-center px-xl-5" id="form">
+                <div class="col-md-6 mb-4">
+                  <div class="input-inner d-flex flex-column gap-2">
+                    <input
+                      id="name"
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Your Name"
+                    />
+                    <div
+                      id="name-overlay"
+                      class="input-overlay rounded-3 p-4 text-center"
+                    >
+                      <p>Special characters and numbers not allowed</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="input-inner d-flex flex-column gap-2">
+                    <input
+                      id="email"
+                      type="email"
+                      class="form-control"
+                      placeholder="Enter Your Email"
+                    />
+                    <div
+                      id="email-overlay"
+                      class="input-overlay rounded-3 p-4 text-center"
+                    >
+                      <p>Email not valid *exemple@yyy.zzz</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="input-inner d-flex flex-column gap-2">
+                    <input
+                      id="phone"
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Your Phone"
+                    />
+                    <div
+                      id="phone-overlay"
+                      class="input-overlay rounded-3 p-4 text-center"
+                    >
+                      <p>Enter valid Phone Number</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="input-inner d-flex flex-column gap-2">
+                    <input
+                      id="age"
+                      type="number"
+                      class="form-control"
+                      placeholder="Enter Your Age"
+                    />
+                    <div
+                      id="age-overlay"
+                      class="input-overlay rounded-3 p-4 text-center"
+                    >
+                      <p>Enter valid age between 11 and 60</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="input-inner d-flex flex-column gap-2">
+                    <input
+                      id="password"
+                      type="password"
+                      class="form-control"
+                      placeholder="Enter Your Password"
+                    />
+                    <div
+                      id="password-overlay"
+                      class="input-overlay rounded-3 p-4 text-center"
+                    >
+                      <p>
+                        Enter valid password *Minimum eight characters, at least
+                        one letter and one number:*
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="input-inner d-flex flex-column gap-2">
+                    <input
+                      id="repassword"
+                      type="password"
+                      class="form-control"
+                      placeholder="Repassword"
+                    />
+                    <div
+                      id="repassword-overlay"
+                      class="input-overlay rounded-3 p-4 text-center"
+                    >
+                      <p>Enter valid repassword</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-2 mb-4">
+                  <div
+                    class="inner d-flex justify-content-center align-items-center"
+                  >
+                    <button
+                      disabled
+                      id="form-submit"
+                      type="button"
+                      class="btn btn-outline-danger"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jquery -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- index JS  -->
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>
